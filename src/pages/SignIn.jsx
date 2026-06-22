@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import axios from "axios";
-import {ENDPOINTS_SORTED} from "../api/endpoints";
+import {ENDPOINTS} from "../api/endpoints";
 
 function SignIn() {
   const { login } = useContext(AuthContext);
@@ -12,7 +12,7 @@ function SignIn() {
   async function handleSubmit(e) {
     e.preventDefault();
       try {
-          const result = await axios.post(ENDPOINTS_SORTED.auth.login,
+          const result = await axios.post(ENDPOINTS.auth.login,
               {
                   email: "regular.user@example.com",
                   password: "regular123"

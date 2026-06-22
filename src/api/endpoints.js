@@ -1,6 +1,6 @@
 const API_URL = import.meta.env.VITE_API_BASE_URL
 
-export const ENDPOINTS_SORTED = {
+export const ENDPOINTS = {
     auth: {
         login:`${API_URL}/login`,
         create: `${API_URL}/users`
@@ -10,10 +10,4 @@ export const ENDPOINTS_SORTED = {
         byId: (id) => `${API_URL}/users/${id}`
     }
 
-}
-export const ENDPOINTS = {
-    LOGIN: `${API_URL}/login`,
-    GET_ALL_USERS: `${API_URL}/users`,
-    GET_USER_BY_ID: `${API_URL}/`,
-    CREATE_NEW_USER: `${API_URL}/users`
 }

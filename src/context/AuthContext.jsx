@@ -2,7 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
 import {jwtDecode} from "jwt-decode";
-import {ENDPOINTS_SORTED} from "../api/endpoints";
+import {ENDPOINTS} from "../api/endpoints";
 
 export const AuthContext = createContext({});
 
@@ -66,7 +66,7 @@ function AuthContextProvider({ children }) {
       const userId = decoded.userId;
     try {
       const result = await axios.get(
-          ENDPOINTS_SORTED.users.byId(userId),
+          ENDPOINTS.users.byId(userId),
           {
             headers: {
               "Content-Type": "application/json",

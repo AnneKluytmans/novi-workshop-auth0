@@ -4,7 +4,6 @@ import {AuthContext} from "../context/AuthContext";
 
 function Profile() {
     const { user } = useContext(AuthContext);
-    console.log(user)
   return (
     <>
       <h1>Profielpagina</h1>
