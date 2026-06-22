@@ -11,7 +11,7 @@ ReactDOM.render(
       <AuthContextProvider>
         <App/>
       </AuthContextProvider>
-    </Router>KAPOT
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
