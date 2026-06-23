@@ -7,7 +7,7 @@ export const ENDPOINTS = {
     },
     users: {
         all: `${API_URL}/users`,
+        byId: (id) => `${API_URL}/users/${id}`,
         me: `${API_URL}/users/me`,
     }
-
 }
