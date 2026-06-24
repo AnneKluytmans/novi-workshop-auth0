@@ -23,16 +23,18 @@ function NavBar() {
               Inloggen / Registreren
           </button>
         ) : (
-          <button onClick={() => logout({
-              logoutParams: { redirect: window.location.origin }
-          })}>
-              Uitloggen
-          </button>
-          &&
-          <button onClick={() => navigate('/profile')}>
-              Profiel
-          </button>
-        )
+          <div>
+              <button onClick={() => logout({
+                  logoutParams: {returnTo: window.location.origin}
+              })}>
+                  Uitloggen
+              </button>
+              <button onClick={() => navigate('/profile')}>
+                  Profiel
+              </button>
+          </div>
+
+      )
       }
 
     </nav>

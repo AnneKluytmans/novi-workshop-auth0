@@ -20,7 +20,7 @@ function Home() {
           Spoiler: stap één is niet "schrijf je wachtwoord op een post-it."
         </p>
         {!isAuthenticated ? (
-             <button onClick=={() => loginWithRedirect()}>
+             <button onClick={() => loginWithRedirect()}>
                Aan de slag!
              </button>
           ) : (
