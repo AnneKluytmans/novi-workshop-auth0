@@ -1,32 +1,32 @@
 import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   return (
     <>
-      <h1>Homepagina</h1>
+      <h1>🍌 Banana Security</h1>
+      <h2>"Omdat jouw data te belangrijk is om aan apen over te laten."</h2>
       <section>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem id libero provident! Accusantium at autem
-          cumque, esse eum, fugiat ipsa ipsam quia quis ratione repudiandae sapiente sequi sit tempora voluptates.
-          Accusantium aperiam asperiores, beatae dolor eius error expedita laboriosam maiores minima mollitia nisi
-          pariatur quaerat quam ratione reiciendis rem similique unde veritatis vitae voluptatum. At atque beatae dolor
-          fuga hic laudantium maxime praesentium quae quia repudiandae sapiente, sed sint, voluptas. Aliquid asperiores
-          assumenda commodi consectetur cumque delectus, distinctio dolore ex facilis fugiat maiores officiis quo,
-          saepe, sequi sunt tempora vero.</p>
-        <p>
-          Aperiam dignissimos dolore ducimus eum explicabo numquam officia quia
-          quibusdam totam velit. Beatae blanditiis consequatur, deserunt eveniet perspiciatis rem tempore voluptate?
-          Alias autem doloribus eum labore laboriosam omnis repellendus tenetur. Accusamus alias at consequuntur
-          corporis eum expedita, illo incidunt iure labore libero nisi, numquam officiis porro quisquam sequi ut vel
-          veniam veritatis voluptatem voluptatibus! Alias dolor eaque iure minus molestiae nemo, nisi odit quaerat! Ad
-          atque beatae consequuntur cum delectus dolor doloremque error et eum expedita illum in itaque laudantium
-          libero maxime minima neque nisi non officia omnis pariatur placeat quaerat quibusdam quidem quo quod
-          repellendus sequi tempore, temporibus totam velit vitae voluptate voluptatem? Ea eaque molestias nesciunt sit
-          temporibus?
-        </p>
+        <p>Welkom bij Banana Security — de meest a-peel-ing beveiligingsoplossing in de jungle van het internet.
+          Wij geloven dat goede authenticatie niet hoeft te voelen als een bezoek aan de dierentuin. Geen chaos,
+          geen aap die met jouw wachtwoord aan de haal gaat, gewoon soepele, betrouwbare beveiliging — gepeld tot op de kern.</p>
       </section>
       <section>
-        <p>Als je ingelogd bent, bekijk dan de <Link to="/profile">Profielpagina</Link></p>
+        <p>
+          Klaar om jouw applicatie te beveiligen? Maak een account aan en ontdek hoe je in drie stappen van nul naar veilig gaat.
+          Spoiler: stap één is niet "schrijf je wachtwoord op een post-it."
+        </p>
+        {!isAuthenticated ? (
+             <button onClick=={() => loginWithRedirect()}>
+               Aan de slag!
+             </button>
+          ) : (
+            <p> Bekijk de <Link to="/profile">Profielpagina</Link></p>
+          )
+        }
       </section>
     </>
   );
