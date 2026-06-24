@@ -7,3 +7,5 @@
 7. Vervang login/logout
 8. Private route aanpassen
 9. Verwijder zoveel mogelijk uit je authContext
+
+![img.png](src/assets/img.png)
