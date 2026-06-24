@@ -23,7 +23,9 @@ function NavBar() {
               Inloggen / Registreren
           </button>
         ) : (
-          <button onClick={() => logout()}>
+          <button onClick={() => logout({
+              logoutParams: { redirect: window.location.origin }
+          })}>
               Uitloggen
           </button>
           &&
