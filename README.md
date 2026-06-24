@@ -201,3 +201,21 @@ export function useCurrentUser() {
 | Sessie controleren | `useEffect` + `jwtDecode` | `isLoading` + `isAuthenticated`    |
 | Login/logout | Eigen functies            | `loginWithRedirect()` / `logout()` |
 | Beveiliging | Kwetsbaar voor XSS        | Veilig via Auth0-sessie            |
+
+
+---
+
+## Preview
+
+<details>
+<summary><strong>Home</strong></summary>  
+
+![Home Page](src/assets/screenshot-home-page.png)
+</details>  
+
+![Demo](src/assets/demo-banana-security.gif)
+
+> This demo shows the banana security project.
+
+
+---
