@@ -1,23 +1,29 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {AuthContext} from "../context/AuthContext";
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Profile() {
-    const { user } = useContext(AuthContext);
-  return (
+    const { user } = useAuth0();
+
+    return (
     <>
-      <h1>Profielpagina</h1>
-      <section>
-        <h2>Gegevens</h2>
-        <p><strong>Email:</strong> {user?.email}</p>
-      </section>
-      <section>
-        <h2>Strikt geheime profiel-content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-      </section>
-      <p>Terug naar de <Link to="/">Homepagina</Link></p>
+        <h1>Profielpagina</h1>
+        <section>
+            <h2>Accountgegevens</h2>
+            <p><strong>E-mail:</strong> {user.email}</p>
+            <p><strong>Naam:</strong> {user.name}</p>
+        </section>
+        <section>
+            <h2>Strikt geheime profiel-content</h2>
+            <p>
+                Welkom in de beveiligde zone. Alleen ingelogde gebruikers zien dit
+                gedeelte. Je bent succesvol geauthenticeerd via Auth0 — zonder een
+                eigen backend of localStorage-token.
+            </p>
+        </section>
+        <Link to="/">← Terug naar de homepagina</Link>
     </>
-  );
-}
+    );
+ }
 
 export default Profile;

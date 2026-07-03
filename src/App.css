@@ -15,7 +15,7 @@ button {
 
 /*Zorgt ervoor dat als twee buttons naast elkaar staan, er altijd ruimte tussen blijft*/
 button + button {
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 button:hover {
